@@ -12,14 +12,11 @@ class ListsController < ApplicationController
    def create
      @list = List.new(params.require(:list).permit(:title, :body))
      if @list.save
-       flash[:notice] = "List was saved."
+       flash[:notice] = "List created."
        redirect_to @list
      else
-       flash[:error] = "There was an error saving the list. Please try again."
+       flash[:error] = "There was an error creating the list. Please try again."
        render :new
      end
    end  
-
-  def edit
-  end
 end
