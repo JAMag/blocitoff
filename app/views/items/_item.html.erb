@@ -1,1 +1,7 @@
-<p><%= Item: item.name %></p>
+<p><%= item.name %></p>
+        <small>
+          Time left before expired: <%= (item.days_left) %>
+        </small>
+          <div>
+            <%= link_to "", [@list, item], method: :delete, class: 'glyphyicon glyphicon-ok' %>
+          </div>
